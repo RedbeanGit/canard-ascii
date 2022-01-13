@@ -9,7 +9,7 @@
     image: postgres:13
     state: started
     restart_policy: always
-    environment:
+    env:
       POSTGRES_USER: "test"
       POSTGRES_PASSWORD: "password"
       POSTGRES_DB: "register"

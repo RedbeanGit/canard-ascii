@@ -1,9 +1,9 @@
-- name: Pull application image
+- name: Pull dispatcher image
   community.docker.docker_image:
     name: fteychene/cloud-cadavre-exquis-dispatcher
     source: pull
 
-- name: Run application
+- name: Run dispatcher
   community.docker.docker_container:
     name: application
     image: fteychene/cloud-cadavre-exquis-dispatcher
@@ -11,5 +11,5 @@
     restart_policy: always
     ports:
      - "8080:8080"
-    environment:
+    env:
       REGISTER_URLS: "http://registers:8080"

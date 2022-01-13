@@ -1,14 +1,14 @@
-upstream canard-ascii {
-    server 162.38.112.131;
-    server 162.38.112.135;
-    server 162.38.112.133;
-    server 162.38.112.140;
+upstream canardascii {
+    server 162.38.112.131:8080;
+    server 162.38.112.135:8080;
+    server 162.38.112.133:8080;
+    server 162.38.112.140:8080;
 }
 
 server {
-    listen   80;
-    server_name   {{ DEFAULT_SERVER_NAME }};
+    listen 80;
+    server_name {{ DEFAULT_SERVER_NAME }};
 	location / {
-        proxy_pass http://canard-ascii;
+        proxy_pass http://canardascii;
     }
 }
