@@ -1,0 +1,48 @@
+---
+- hosts: loadbalancer
+  become: yes
+  become_user: root
+  roles:
+    - loadbalancer
+
+- hosts: register
+  become: yes
+  become_user: root
+  roles:
+    - register
+
+- hosts: postgres
+  become: yes
+  become_user: root
+  roles:
+    - postgres
+
+- hosts: dispatcher
+  become: yes
+  become_user: root
+  roles:
+    - dispatcher
+
+- hosts: provider
+  become: yes
+  become_user: root
+  roles:
+    - provider
+
+- hosts: provider-subject
+  become: yes
+  become_user: root
+  roles:
+    - provider-subject
+
+- hosts: provider-adj
+  become: yes
+  become_user: root
+  roles:
+    - provider-adj
+
+- hosts: provider-verb
+  become: yes
+  become_user: root
+  roles:
+    - provider-verb

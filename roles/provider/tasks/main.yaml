@@ -1,0 +1,4 @@
+- name: Pull provider image
+  community.docker.docker_image:
+    name: fteychene/cloud-cadavre-exquis-provider:1.0-SNAPSHOT
+    source: pull

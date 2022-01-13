@@ -1,0 +1,38 @@
+loadbalancer1 ansible_user=cadavre ansible_host=162.38.112.133
+register1 ansible_user=cadavre ansible_host=162.38.112.133
+postgres1 ansible_user=cadavre ansible_host=162.38.112.133
+
+dispatcher1 ansible_user=cadavre ansible_host=162.38.112.131
+dispatcher2 ansible_user=cadavre ansible_host=162.38.112.135
+dispatcher3 ansible_user=cadavre ansible_host=162.38.112.133
+dispatcher4 ansible_user=cadavre ansible_host=162.38.112.140
+
+provider1 ansible_user=cadavre ansible_host=162.38.112.131
+provider2 ansible_user=cadavre ansible_host=162.38.112.135
+provider3 ansible_user=cadavre ansible_host=162.38.112.133
+provider4 ansible_user=cadavre ansible_host=162.38.112.140
+
+[loadbalancer]
+loadbalancer1
+
+[register]
+register1
+
+[postgres]
+postgres1
+
+[dispatcher]
+dispatcher1
+dispatcher2
+dispatcher3
+dispatcher4
+
+[provider-verb]
+provider1
+
+[provider-subject]
+provider2
+
+[provider-adj]
+provider3
+provider4

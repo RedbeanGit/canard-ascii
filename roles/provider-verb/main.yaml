@@ -1,0 +1,11 @@
+- name: Run provider
+  community.docker.docker_container:
+    name: register
+    image: fteychene/cloud-cadavre-exquis-provider:1.0-SNAPSHOT
+    state: started
+    restart_policy: always
+    ports:
+     - "8082:8080"
+    environment:
+      REGISTER_URLS: "http://162.38.112.133:8081"
+      WORD_TYPE: VERB
