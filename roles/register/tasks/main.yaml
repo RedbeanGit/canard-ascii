@@ -12,7 +12,7 @@
     ports:
      - "8081:8080"
     env:
-      POSTGRESQL_ADDON_HOST: "postgres"
+      POSTGRESQL_ADDON_HOST: "192.168.33.13"
       POSTGRESQL_ADDON_PORT: "5432"
       POSTGRESQL_ADDON_DB: "register"
       POSTGRESQL_ADDON_USER: "test"

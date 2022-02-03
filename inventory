@@ -1,16 +1,16 @@
 loadbalancer1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
-register1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
-postgres1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
+register1 ansible_user=vagrant ansible_host=192.168.33.12 ansible_ssh_private_key_file='.vagrant/machines/worker2/libvirt/private_key'
+postgres1 ansible_user=vagrant ansible_host=192.168.33.13 ansible_ssh_private_key_file='.vagrant/machines/worker3/libvirt/private_key'
 
-dispatcher1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
-dispatcher2 ansible_user=vagrant ansible_host=192.168.33.12 ansible_ssh_private_key_file='.vagrant/machines/worker2/libvirt/private_key'
-dispatcher3 ansible_user=vagrant ansible_host=192.168.33.13 ansible_ssh_private_key_file='.vagrant/machines/worker3/libvirt/private_key'
-dispatcher4 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
+dispatcher1 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
+dispatcher2 ansible_user=vagrant ansible_host=192.168.33.15 ansible_ssh_private_key_file='.vagrant/machines/worker5/libvirt/private_key'
+dispatcher3 ansible_user=vagrant ansible_host=192.168.33.16 ansible_ssh_private_key_file='.vagrant/machines/worker6/libvirt/private_key'
+dispatcher4 ansible_user=vagrant ansible_host=192.168.33.17 ansible_ssh_private_key_file='.vagrant/machines/worker7/libvirt/private_key'
 
-provider1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
-provider2 ansible_user=vagrant ansible_host=192.168.33.12 ansible_ssh_private_key_file='.vagrant/machines/worker2/libvirt/private_key'
-provider3 ansible_user=vagrant ansible_host=192.168.33.13 ansible_ssh_private_key_file='.vagrant/machines/worker3/libvirt/private_key'
-provider4 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
+provider1 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
+provider2 ansible_user=vagrant ansible_host=192.168.33.15 ansible_ssh_private_key_file='.vagrant/machines/worker5/libvirt/private_key'
+provider3 ansible_user=vagrant ansible_host=192.168.33.16 ansible_ssh_private_key_file='.vagrant/machines/worker6/libvirt/private_key'
+provider4 ansible_user=vagrant ansible_host=192.168.33.17 ansible_ssh_private_key_file='.vagrant/machines/worker7/libvirt/private_key'
 
 [loadbalancer]
 loadbalancer1
@@ -36,3 +36,12 @@ provider2
 [provider-adj]
 provider3
 provider4
+
+[all]
+loadbalancer1
+register1
+postgres1
+dispatcher1
+dispatcher2
+dispatcher3
+dispatcher4
