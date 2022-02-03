@@ -1,16 +1,14 @@
-loadbalancer1 ansible_user=vagrant ansible_host=192.168.33.11 ansible_ssh_private_key_file='.vagrant/machines/worker1/libvirt/private_key'
-register1 ansible_user=vagrant ansible_host=192.168.33.12 ansible_ssh_private_key_file='.vagrant/machines/worker2/libvirt/private_key'
-postgres1 ansible_user=vagrant ansible_host=192.168.33.13 ansible_ssh_private_key_file='.vagrant/machines/worker3/libvirt/private_key'
+loadbalancer1 ansible_user=debian ansible_host=141.95.110.78 ansible_ssh_private_key_file='~/.ssh/ovh'
+register1 ansible_user=debian ansible_host=141.95.106.44 ansible_ssh_private_key_file='~/.ssh/ovh'
+postgres1 ansible_user=debian ansible_host=141.95.111.83 ansible_ssh_private_key_file='~/.ssh/ovh'
 
-dispatcher1 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
-dispatcher2 ansible_user=vagrant ansible_host=192.168.33.15 ansible_ssh_private_key_file='.vagrant/machines/worker5/libvirt/private_key'
-dispatcher3 ansible_user=vagrant ansible_host=192.168.33.16 ansible_ssh_private_key_file='.vagrant/machines/worker6/libvirt/private_key'
-dispatcher4 ansible_user=vagrant ansible_host=192.168.33.17 ansible_ssh_private_key_file='.vagrant/machines/worker7/libvirt/private_key'
+dispatcher1 ansible_user=debian ansible_host=141.95.110.78 ansible_ssh_private_key_file='~/.ssh/ovh'
+dispatcher2 ansible_user=debian ansible_host=141.95.106.44 ansible_ssh_private_key_file='~/.ssh/ovh'
+dispatcher3 ansible_user=debian ansible_host=141.95.111.83 ansible_ssh_private_key_file='~/.ssh/ovh'
 
-provider1 ansible_user=vagrant ansible_host=192.168.33.14 ansible_ssh_private_key_file='.vagrant/machines/worker4/libvirt/private_key'
-provider2 ansible_user=vagrant ansible_host=192.168.33.15 ansible_ssh_private_key_file='.vagrant/machines/worker5/libvirt/private_key'
-provider3 ansible_user=vagrant ansible_host=192.168.33.16 ansible_ssh_private_key_file='.vagrant/machines/worker6/libvirt/private_key'
-provider4 ansible_user=vagrant ansible_host=192.168.33.17 ansible_ssh_private_key_file='.vagrant/machines/worker7/libvirt/private_key'
+provider1 ansible_user=debian ansible_host=141.95.110.78 ansible_ssh_private_key_file='~/.ssh/ovh'
+provider2 ansible_user=debian ansible_host=141.95.106.44 ansible_ssh_private_key_file='~/.ssh/ovh'
+provider3 ansible_user=debian ansible_host=141.95.111.83 ansible_ssh_private_key_file='~/.ssh/ovh'
 
 [loadbalancer]
 loadbalancer1
@@ -25,7 +23,11 @@ postgres1
 dispatcher1
 dispatcher2
 dispatcher3
-dispatcher4
+
+[provider]
+provider1
+provider2
+provider3
 
 [provider-verb]
 provider1
@@ -35,13 +37,8 @@ provider2
 
 [provider-adj]
 provider3
-provider4
 
 [all]
-loadbalancer1
-register1
-postgres1
 dispatcher1
 dispatcher2
 dispatcher3
-dispatcher4

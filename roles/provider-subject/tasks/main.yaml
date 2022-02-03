@@ -1,11 +1,13 @@
 - name: Run provider for subject
   community.docker.docker_container:
-    name: register
+    name: provider
     image: fteychene/cloud-cadavre-exquis-provider:1.0-SNAPSHOT
     state: started
     restart_policy: always
+    restart: yes
     ports:
      - "8082:8080"
     env:
-      REGISTER_URLS: "http://192.168.33.12:8081"
+      REGISTER_URLS: "http://141.95.106.44:8081"
       WORD_TYPE: SUBJECT
+      ADVERTISER_URL: "http://141.95.106.44:8082"
